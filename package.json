@@ -1,0 +1,14 @@
+{
+  "name": "html-initializer",
+  "version": "1.0.0",
+  "description": "html initializer to start project on 10 seconds",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anouar CHARIJ <m.charij.anouar@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
+  "dependencies": {}
+}
