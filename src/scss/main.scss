@@ -4,12 +4,12 @@
 */
 
 // Core variables, functions and mixins
-@import 'helpers/variables';
+@import 'helpers/vars';
 @import 'helpers/mixins';
 @import 'helpers/functions';
 
 // Bases
-@import 'bases/bases';
+@import 'bases/base';
 @import 'bases/typography';
 
 // Components
@@ -24,3 +24,6 @@
 @import 'layouts/sidebar';
 @import 'layouts/main';
 @import 'layouts/footer';
+
+// containers
+@import 'containers/home';

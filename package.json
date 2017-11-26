@@ -8,7 +8,10 @@
   "author": "Anouar CHARIJ <m.charij.anouar@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^1.0.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {}
 }
