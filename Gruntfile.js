@@ -99,6 +99,25 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+		/**
+		*	@module imagemin
+		*	Minify Images
+		**/
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'src/', 
+					src: ['*.{png,ico,jpg,jpeg,gif}'],
+					dest: 'dist/'
+				},{
+					expand: true,
+					cwd: 'src/img/', 
+					src: ['*.{png,ico,jpg,jpeg,gif}'],
+					dest: 'dist/img/'
+				}]
+			}
+		},
     });
     
     /**
@@ -110,5 +129,6 @@ module.exports = function(grunt) {
 		'sass',
 		'csscomb',
 		'cssmin',
+		'imagemin',
 	]);
 };
