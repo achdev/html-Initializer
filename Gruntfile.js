@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'compressed',
+					style: 'expanded',
 					sourcemap: 'auto',
 					noCache: false,
 					update: true
@@ -49,7 +49,37 @@ module.exports = function(grunt) {
 					cwd: 'src/scss',
 					src: ['*.scss', '**/*.scss', '**/**/*.scss'],
 					dest: 'dist/css',
-					ext: '.css'
+					ext: '.min.css'
+				}]
+			}
+		},
+		/**
+		*	@module csscomb
+		*	CSSComb Formatter
+		**/
+		csscomb: {
+			options: { config: '.csscomb.json' },
+			dynamic_mappings: {
+				expand: true,
+				cwd: 'dist/css',
+				src: '*.min.css',
+				dest: 'dist/css',
+				ext: '.min.css'
+			}
+		},
+		/**
+		*	@module cssmin
+		*	Minify the CSS files after the CSSComb
+		**/
+		cssmin: {
+			options: { sourceMap: true },
+			target: {
+				files: [{
+					expand: true,
+					cwd: 'dist/css',
+					src: '*.min.css',
+					dest: 'dist/css',
+					ext: '.min.css'
 				}]
 			}
 		},
@@ -61,5 +91,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
 		'jade',
 		'sass',
+		'csscomb',
+		'cssmin',
 	]);
 };
