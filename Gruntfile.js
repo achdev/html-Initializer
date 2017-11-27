@@ -33,6 +33,22 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
+		*	@module prettify
+		*	Prettify HTML
+		**/
+		prettify: {
+			options: {
+				config: '.prettifyrc'
+			},
+			files: {
+				expand: true,
+				cwd: 'dist/',
+				ext: '.html',
+				src: ['*.html'],
+				dest: 'dist/'
+			}
+		},
+		/**
 		*	@module sass
 		*	Compile SCSS to CSS
 		**/
@@ -90,6 +106,7 @@ module.exports = function(grunt) {
     **/
     grunt.registerTask('default', [
 		'jade',
+		'prettify',
 		'sass',
 		'csscomb',
 		'cssmin',
