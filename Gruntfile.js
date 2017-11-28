@@ -119,6 +119,27 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
+		*	Copy Fonts files to dist
+		*	@module copy
+		**/
+		copy: {
+			main: {
+				files: [{
+					expand: true, 
+					flatten: true, 
+					cwd: 'src',
+					src: ['browserconfig.xml', 'site.webmanifest'], 
+					dest: 'dist',
+					filter: 'isFile'
+				},{
+					expand: true,
+					cwd: 'src/fonts',
+					src: ['**'], 
+					dest: 'dist/fonts/'
+				}]
+			}
+		},
+		/**
 		*	@module connect
 		*	Livereload connect
 		**/
@@ -140,14 +161,14 @@ module.exports = function(grunt) {
 		watch: {
 			options: {
 				dateFormat: function(time) {
-					grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
-					grunt.log.writeln('Waiting for more changes...');
+					grunt.log.writeln('The watch finished in ' + time + 'ms at ' + (new Date()).toString());
+					grunt.log.writeln('Waiting for more changes ...');
 				},
 				livereload: true
 			},
 			files: {
-				files: ['src/*.jade', 'src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/**/**/*.scss'],
-				tasks: ['jade', 'prettify', 'sass', 'csscomb', 'cssmin']
+				files: ['src/browserconfig.xml', 'src/site.webmanifest', 'src/*.jade', 'src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/**/**/*.scss'],
+				tasks: ['jade', 'prettify', 'sass', 'csscomb', 'cssmin', 'copy']
 			},
 		}
     });
@@ -162,6 +183,7 @@ module.exports = function(grunt) {
 		'csscomb',
 		'cssmin',
 		'imagemin',
+		'copy',
 		'connect',
 		'watch',
 	]);
