@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "html initializer to start project on 10 seconds",
   "scripts": {
+    "start": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anouar CHARIJ <m.charij.anouar@gmail.com>",
