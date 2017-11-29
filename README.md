@@ -12,12 +12,12 @@ Install the dependencies and devDependencies.
 
 ```sh
 $ git clone https://github.com/anouarcharij/html-Initializer.git
+$ cd html-Initializer
 $ npm install
 ```
 
 ## Run
 
 ```sh
-$ cd html-Initializer
 $ npm start
 ```
