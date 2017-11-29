@@ -100,6 +100,22 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
+		*	@module uglify
+		*	Minify the JavaScript files
+		**/
+		uglify: {
+			options: { mangle: true, sourceMap: true },
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'src/js',
+					src: ['*.js', '**/*.js'],
+					dest: 'dist/js/',
+					ext: '.min.js'
+				}]
+			}
+		},
+		/**
 		*	@module imagemin
 		*	Minify Images
 		**/
@@ -119,8 +135,8 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	Copy Fonts files to dist
 		*	@module copy
+		*	Copy config & fonts files to dist
 		**/
 		copy: {
 			main: {
@@ -167,8 +183,8 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			files: {
-				files: ['src/browserconfig.xml', 'src/site.webmanifest', 'src/*.jade', 'src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/**/**/*.scss'],
-				tasks: ['jade', 'prettify', 'sass', 'csscomb', 'cssmin', 'copy']
+				files: ['src/browserconfig.xml', 'src/site.webmanifest', 'src/*.jade', 'src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/**/**/*.scss', 'src/js/*.js', 'src/js/**/*.js'],
+				tasks: ['jade', 'prettify', 'sass', 'csscomb', 'cssmin', 'uglify', 'copy']
 			},
 		}
     });
@@ -182,6 +198,7 @@ module.exports = function(grunt) {
 		'sass',
 		'csscomb',
 		'cssmin',
+		'uglify',
 		'imagemin',
 		'copy',
 		'connect',
