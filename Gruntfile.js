@@ -144,7 +144,7 @@ module.exports = function(grunt) {
 					expand: true, 
 					flatten: true, 
 					cwd: 'src',
-					src: ['browserconfig.xml', 'site.webmanifest'], 
+					src: ['browserconfig.xml', 'site.webmanifest', 'tile.png', 'tile-wide.png', 'icon.png', 'favicon.png', 'apple-touch-icon.png'], 
 					dest: 'dist',
 					filter: 'isFile'
 				},{
@@ -175,17 +175,38 @@ module.exports = function(grunt) {
 		*	Watchers	
 		**/
 		watch: {
-			options: {
-				dateFormat: function(time) {
-					grunt.log.writeln('The watch finished in ' + time + 'ms at ' + (new Date()).toString());
-					grunt.log.writeln('Waiting for more changes ...');
+			scripts: {
+				files: ['src/js/*.js', 'src/js/**/*.js'],
+				tasks: ['uglify'],
+				options: {
+					livereload: true,
+					spawn: false,
 				},
-				livereload: true
 			},
-			files: {
-				files: ['src/browserconfig.xml', 'src/site.webmanifest', 'src/*.jade', 'src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/**/**/*.scss', 'src/js/*.js', 'src/js/**/*.js'],
-				tasks: ['jade', 'prettify', 'sass', 'csscomb', 'cssmin', 'uglify', 'copy']
+			css: {
+				files: ['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/**/**/*.scss'],
+				tasks: ['sass', 'csscomb', 'cssmin'],
+				options: {
+					livereload: true,
+					spawn: false,
+				},
 			},
+			jade: {
+				files: ['src/*.jade'],
+				tasks: ['jade', 'prettify'],
+				options: {
+					livereload: true,
+					spawn: false,
+				},
+			},
+			copy: {
+				files: ['src/browserconfig.xml', 'src/site.webmanifest'],
+				tasks: ['copy'],
+				options: {
+					livereload: true,
+					spawn: false,
+				},
+			}
 		}
     });
     
