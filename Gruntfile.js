@@ -1,22 +1,23 @@
 /**
-*	@author Anouar CHARIJ <m.charij.anouar@gmail.com>
-*	Grunt Task Runner configuration
-**/
+ * Grunt Task Runner configuration 
+ * @author Anouar CHARIJ <m.charij.anouar@gmail.com>
+ * @version 1.0.1
+ */
 module.exports = function(grunt) {
 	/**
-	*	Load all tasks
-	**/
+	 * Load all tasks
+	 */
 	require('load-grunt-tasks')(grunt);
 
 	/**
-	*	Grunt Configurations
-	**/	
+	 * Grunt Configurations
+	 */	
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		/**
-		*	@module jade
-		*	Compile JADE to HTML
-		**/
+		 * Compile JADE to HTML
+		 * @module jade
+		 */
 		jade: {
 			compile: {
 				options: {
@@ -33,9 +34,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module prettify
-		*	Prettify HTML
-		**/
+		 * Prettify HTML
+		 * @module prettify
+		 */
 		prettify: {
 			options: {
 				config: '.prettifyrc'
@@ -49,9 +50,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module sass
-		*	Compile SCSS to CSS
-		**/
+		 * Compile SCSS to CSS
+		 * @module sass
+		 */
 		sass: {
 			dist: {
 				options: {
@@ -70,9 +71,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module csscomb
-		*	CSSComb Formatter
-		**/
+		 * CSSComb Formatter
+		 * @module csscomb
+		 */
 		csscomb: {
 			options: { config: '.csscomb.json' },
 			dynamic_mappings: {
@@ -84,9 +85,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module cssmin
-		*	Minify the CSS files after the CSSComb
-		**/
+		 * Minify the CSS files after the CSSComb
+		 * @module cssmin
+		 */
 		cssmin: {
 			options: { sourceMap: true },
 			target: {
@@ -100,9 +101,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module uglify
-		*	Minify the JavaScript files
-		**/
+		 * Minify the JavaScript files
+		 * @module uglify
+		 */
 		uglify: {
 			options: { mangle: true, sourceMap: true },
 			dist: {
@@ -116,9 +117,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module imagemin
-		*	Minify Images
-		**/
+		 * Minify Images
+		 * @module imagemin
+		 */
 		imagemin: {
 			dynamic: {
 				files: [{
@@ -135,9 +136,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module copy
-		*	Copy config & fonts files to dist
-		**/
+		 * Copy config & fonts files to dist
+		 * @module copy
+		 */
 		copy: {
 			main: {
 				files: [{
@@ -156,9 +157,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module connect
-		*	Livereload connect
-		**/
+		 * Livereload connect
+		 * @module connect
+		 */
 		connect: {
 			server: {
 				options: {
@@ -171,9 +172,9 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
-		*	@module watch
-		*	Watchers	
-		**/
+		 * Watchers	
+		 * @module watch
+		 */
 		watch: {
 			scripts: {
 				files: ['src/js/*.js', 'src/js/**/*.js'],
@@ -208,12 +209,12 @@ module.exports = function(grunt) {
 				},
 			}
 		}
-    });
-    
-    /**
-    *	Register tasks
-    **/
-    grunt.registerTask('default', [
+	});
+	
+	/**
+	 * Register tasks
+	 */
+	grunt.registerTask('default', [
 		'jade',
 		'prettify',
 		'sass',
