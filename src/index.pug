@@ -1,0 +1,30 @@
+doctype html
+html.no-js(lang='')
+  head
+    meta(charset='utf-8')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='manifest', href='site.webmanifest')
+    link(rel='apple-touch-icon', href='icon.png')
+    // Place favicon.ico in the root directory
+    link(rel='stylesheet', href='css/main.min.css')
+    meta(name='theme-color', content='#fafafa')
+  body
+    <!--[if lte IE 9]>
+    p(class="browserupgrade").
+        You are using an #[strong="outdated"] browser. Please #[a(href="http://browsehappy.com/")="upgrade your browser"] to improve your experience and security.
+    <![endif]-->
+
+    // Add your site or application content here
+    main
+      h1 HTML5 Initializer
+      p Hello world! This is HTML5 Boilerplate.
+
+    script(src='js/vendor/modernizr.min.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\\/script>')
+    script(src='js/plugins.min.js')
+    script(src='js/main.min.js')
+

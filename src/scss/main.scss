@@ -1,6 +1,6 @@
 /*!
 *   AUTHOR : Anouar CHARIJ <m.charij.anouar@gmail.com>
-*   VERSION: 1.0.0
+*   VERSION: 1.0.1
 */
 
 // Core variables, functions and mixins
@@ -10,18 +10,13 @@
 
 // Bases
 @import 'bases/base';
+@import 'bases/font';
 @import 'bases/typography';
 
 // Components
-@import 'components/button';
-@import 'components/form';
-@import 'components/nav';
-@import 'components/table';
-@import 'components/list';
 
 // layouts
 @import 'layouts/header';
-@import 'layouts/sidebar';
 @import 'layouts/main';
 @import 'layouts/footer';
 

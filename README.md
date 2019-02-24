@@ -16,8 +16,14 @@ $ cd html-Initializer
 $ npm install
 ```
 
-## Run
+## Run the server
 
 ```sh
-$ npm start
+$ npm run server
+```
+
+## Build the project
+
+```sh
+$ npm run build
 ```

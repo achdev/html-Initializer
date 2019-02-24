@@ -1,4 +1,4 @@
-{
+module.exports = {
     "env": {
         "browser": true
     },
@@ -9,11 +9,11 @@
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
-            "windows"
+            "unix"
         ],
         "quotes": [
             "error",
@@ -24,4 +24,4 @@
             "always"
         ]
     }
-}
+};
